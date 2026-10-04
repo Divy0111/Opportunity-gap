@@ -49,7 +49,7 @@ logoutBtn.addEventListener(
     function() {
 
         window.location.href =
-            "login.html";
+            "login1.html";
 
     }
 );
