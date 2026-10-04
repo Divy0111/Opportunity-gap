@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Opportune - Login</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1e0b36,
+                    #4c1d95,
+                    #7c3aed,
+                    #312e81
+                );
+
+        }
+
+
+        /* ANIMATED BACKGROUND */
+
+        .background {
+
+            position: fixed;
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: hidden;
+
+            z-index: -1;
+
+        }
+
+
+        .circle {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            filter: blur(2px);
+
+            opacity: 0.35;
+
+            animation: float 8s infinite ease-in-out;
+
+        }
+
+
+        .circle1 {
+
+            width: 300px;
+
+            height: 300px;
+
+            background: #a78bfa;
+
+            top: -100px;
+
+            left: -80px;
+
+        }
+
+
+        .circle2 {
+
+            width: 250px;
+
+            height: 250px;
+
+            background: #c084fc;
+
+            right: -80px;
+
+            bottom: -80px;
+
+            animation-delay: 2s;
+
+        }
+
+
+        .circle3 {
+
+            width: 180px;
+
+            height: 180px;
+
+            background: #818cf8;
+
+            right: 25%;
+
+            top: 10%;
+
+            animation-delay: 4s;
+
+        }
+
+
+        @keyframes float {
+
+            0%, 100% {
+
+                transform: translateY(0)
+                           translateX(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-40px)
+                           translateX(30px);
+
+            }
+
+        }
+
+
+        /* MAIN CONTAINER */
+
+        .container {
+
+            width: 900px;
+
+            max-width: 94%;
+
+            min-height: 550px;
+
+            display: flex;
+
+            background: rgba(255,255,255,0.13);
+
+            backdrop-filter: blur(20px);
+
+            -webkit-backdrop-filter: blur(20px);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.35);
+
+            overflow: hidden;
+
+            animation: appear 1s ease;
+
+        }
+
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform: scale(0.9)
+                           translateY(30px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: scale(1)
+                           translateY(0);
+
+            }
+
+        }
+
+
+        /* LEFT SIDE */
+
+        .left {
+
+            width: 45%;
+
+            padding: 50px 40px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(91,33,182,0.8),
+                    rgba(124,58,237,0.35)
+                );
+
+        }
+
+
+        .brand {
+
+            font-size: 45px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .brand span {
+
+            color: #ddd6fe;
+
+        }
+
+
+        .left h2 {
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .left p {
+
+            color: #e9d5ff;
+
+            line-height: 1.6;
+
+            font-size: 15px;
+
+        }
+
+
+        .features {
+
+            margin-top: 30px;
+
+        }
+
+
+        .feature {
+
+            margin: 15px 0;
+
+            font-size: 14px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .check {
+
+            width: 25px;
+
+            height: 25px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: rgba(255,255,255,0.2);
+
+        }
+
+
+        /* RIGHT SIDE */
+
+        .right {
+
+            width: 55%;
+
+            padding: 45px;
+
+            background: rgba(255,255,255,0.94);
+
+            position: relative;
+
+        }
+
+
+        /* TOP BUTTONS */
+
+        .switch-buttons {
+
+            display: flex;
+
+            background: #f3f4f6;
+
+            padding: 5px;
+
+            border-radius: 10px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .switch-buttons button {
+
+            width: 50%;
+
+            padding: 12px;
+
+            border: none;
+
+            background: transparent;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            color: #6b7280;
+
+            transition: 0.3s;
+
+        }
+
+
+        .switch-buttons button.active {
+
+            background: #5b21b6;
+
+            color: white;
+
+            box-shadow:
+                0 5px 15px rgba(91,33,182,0.25);
+
+        }
+
+
+        /* FORMS */
+
+        .form {
+
+            display: none;
+
+            animation: slideIn 0.5s ease;
+
+        }
+
+
+        .form.active {
+
+            display: block;
+
+        }
+
+
+        @keyframes slideIn {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateX(25px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateX(0);
+
+            }
+
+        }
+
+
+        .form h1 {
+
+            color: #2e1065;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .form-subtitle {
+
+            color: #6b7280;
+
+            margin-bottom: 25px;
+
+            font-size: 14px;
+
+        }
+
+
+        /* INPUT */
+
+        .input-box {
+
+            position: relative;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .input-box input {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+
+            background: white;
+
+        }
+
+
+        .input-box input:focus {
+
+            border-color: #7c3aed;
+
+            box-shadow:
+                0 0 0 3px #ede9fe;
+
+        }
+
+
+        .input-box label {
+
+            position: absolute;
+
+            left: 14px;
+
+            top: 14px;
+
+            color: #9ca3af;
+
+            pointer-events: none;
+
+            transition: 0.3s;
+
+            background: white;
+
+            padding: 0 4px;
+
+        }
+
+
+        .input-box input:focus + label,
+
+        .input-box input:not(:placeholder-shown) + label {
+
+            top: -8px;
+
+            font-size: 12px;
+
+            color: #6d28d9;
+
+        }
+
+
+        /* PASSWORD */
+
+        .password {
+
+            position: relative;
+
+        }
+
+
+        .password input {
+
+            padding-right: 60px;
+
+        }
+
+
+        .show {
+
+            position: absolute;
+
+            right: 12px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: none;
+
+            color: #6d28d9;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+
+        /* FORGOT */
+
+        .forgot {
+
+            text-align: right;
+
+            margin-top: -10px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .forgot a {
+
+            color: #6d28d9;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        .forgot a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* MAIN BUTTON */
+
+        .main-btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #5b21b6,
+                    #7c3aed
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 8px 20px rgba(91,33,182,0.25);
+
+        }
+
+
+        .main-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(91,33,182,0.35);
+
+        }
+
+
+        .main-btn:active {
+
+            transform: scale(0.98);
+
+        }
+
+
+        /* MESSAGE */
+
+        #message {
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+        .success {
+
+            color: #16a34a;
+
+        }
+
+
+        .error {
+
+            color: #dc2626;
+
+        }
+
+
+        /* BACK HOME */
+
+        .back-home {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #6b7280;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .back-home:hover {
+
+            color: #5b21b6;
+
+        }
+
+
+        /* FORGOT POPUP */
+
+        .popup {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,0.55);
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 10;
+
+        }
+
+
+        .popup-box {
+
+            width: 360px;
+
+            max-width: 90%;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            animation: popup 0.4s ease;
+
+        }
+
+
+        @keyframes popup {
+
+            from {
+
+                opacity: 0;
+
+                transform: scale(0.8);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: scale(1);
+
+            }
+
+        }
+
+
+        .popup-box h2 {
+
+            color: #4c1d95;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .popup-box p {
+
+            color: #6b7280;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .popup-box input {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 8px;
+
+            margin-bottom: 15px;
+
+            outline: none;
+
+        }
+
+
+        .close-btn {
+
+            margin-top: 12px;
+
+            border: none;
+
+            background: none;
+
+            color: #6b7280;
+
+            cursor: pointer;
+
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 750px) {
+
+            body {
+
+                overflow: auto;
+
+                padding: 20px 0;
+
+            }
+
+
+            .container {
+
+                flex-direction: column;
+
+                min-height: auto;
+
+            }
+
+
+            .left {
+
+                width: 100%;
+
+                padding: 35px 30px;
+
+                text-align: center;
+
+            }
+
+
+            .brand {
+
+                font-size: 35px;
+
+            }
+
+
+            .left h2 {
+
+                font-size: 23px;
+
+            }
+
+
+            .features {
+
+                display: none;
+
+            }
+
+
+            .right {
+
+                width: 100%;
+
+                padding: 30px 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="background">
+
+        <div class="circle circle1"></div>
+
+        <div class="circle circle2"></div>
+
+        <div class="circle circle3"></div>
+
+    </div>
+
+
+    <!-- MAIN CONTAINER -->
+
+    <div class="container">
+
+
+        <!-- LEFT -->
+
+        <div class="left">
+
+            <div class="brand">
+                Oppor<span>tune</span>
+            </div>
+
+            <h2>
+                Your Opportunity Starts Here.
+            </h2>
+
+            <p>
+                Discover internships, competitions,
+                scholarships, events and other
+                opportunities made for students.
+            </p>
+
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="check">✓</div>
+
+                    Discover new opportunities
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="check">✓</div>
+
+                    Save opportunities for later
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="check">✓</div>
+
+                    Build your student profile
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="right">
+
+
+            <!-- LOGIN / SIGNUP BUTTONS -->
+
+            <div class="switch-buttons">
+
+                <button
+                    id="loginTab"
+                    class="active"
+                    onclick="showLogin()">
+
+                    Login
+
+                </button>
+
+
+                <button
+                    id="signupTab"
+                    onclick="showSignup()">
+
+                    Sign Up
+
+                </button>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <div
+                id="loginForm"
+                class="form active">
+
+                <h1>
+                    Welcome Back!
+                </h1>
+
+                <p class="form-subtitle">
+                    Login to continue to Opportune
+                </p>
+
+
+                <div class="input-box">
+
+                    <input
+                        type="text"
+                        id="loginUsername"
+                        placeholder=" "
+                        required>
+
+                    <label>
+                        Username
+                    </label>
+
+                </div>
+
+
+                <div class="input-box password">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder=" "
+                        required>
+
+                    <label>
+                        Password
+                    </label>
+
+                    <button
+                        type="button"
+                        class="show"
+                        onclick="togglePassword(
+                            'loginPassword',
+                            this
+                        )">
+
+                        Show
+
+                    </button>
+
+                </div>
+
+
+                <div class="forgot">
+
+                    <a onclick="openForgot()">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <button
+                    class="main-btn"
+                    onclick="login()">
+
+                    Login
+
+                </button>
+
+            </div>
+
+
+            <!-- SIGN UP FORM -->
+
+            <div
+                id="signupForm"
+                class="form">
+
+                <h1>
+                    Create Account
+                </h1>
+
+                <p class="form-subtitle">
+                    Join Opportune today
+                </p>
+
+
+                <div class="input-box">
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        placeholder=" "
+                        required>
+
+                    <label>
+                        Full Name
+                    </label>
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <input
+                        type="text"
+                        id="signupUsername"
+                        placeholder=" "
+                        required>
+
+                    <label>
+                        Username
+                    </label>
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder=" "
+                        required>
+
+                    <label>
+                        Email Address
+                    </label>
+
+                </div>
+
+
+                <div class="input-box password">
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        placeholder=" "
+                        required>
+
+                    <label>
+                        Password
+                    </label>
+
+                    <button
+                        type="button"
+                        class="show"
+                        onclick="togglePassword(
+                            'signupPassword',
+                            this
+                        )">
+
+                        Show
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="main-btn"
+                    onclick="signup()">
+
+                    Create Account
+
+                </button>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <p id="message"></p>
+
+
+            <!-- HOME -->
+
+            <a
+                href="home.html"
+                class="back-home">
+
+                ← Back to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FORGOT PASSWORD POPUP -->
+
+    <div
+        class="popup"
+        id="forgotPopup">
+
+        <div class="popup-box">
+
+            <h2>
+                Forgot Password?
+            </h2>
+
+            <p>
+                Enter your email address and
+                we'll help you reset your password.
+            </p>
+
+
+            <input
+                type="email"
+                id="forgotEmail"
+                placeholder="Enter your email">
+
+
+            <button
+                class="main-btn"
+                onclick="resetPassword()">
+
+                Send Reset Link
+
+            </button>
+
+
+            <button
+                class="close-btn"
+                onclick="closeForgot()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+        /* SWITCH TO LOGIN */
+
+        function showLogin() {
+
+            document
+                .getElementById("loginForm")
+                .classList.add("active");
+
+            document
+                .getElementById("signupForm")
+                .classList.remove("active");
+
+
+            document
+                .getElementById("loginTab")
+                .classList.add("active");
+
+            document
+                .getElementById("signupTab")
+                .classList.remove("active");
+
+
+            clearMessage();
+
+        }
+
+
+        /* SWITCH TO SIGN UP */
+
+        function showSignup() {
+
+            document
+                .getElementById("signupForm")
+                .classList.add("active");
+
+            document
+                .getElementById("loginForm")
+                .classList.remove("active");
+
+
+            document
+                .getElementById("signupTab")
+                .classList.add("active");
+
+            document
+                .getElementById("loginTab")
+                .classList.remove("active");
+
+
+            clearMessage();
+
+        }
+
+
+        /* PASSWORD SHOW / HIDE */
+
+        function togglePassword(id, button) {
+
+            const input =
+                document.getElementById(id);
+
+
+            if (input.type === "password") {
+
+                input.type = "text";
+
+                button.textContent = "Hide";
+
+            }
+
+            else {
+
+                input.type = "password";
+
+                button.textContent = "Show";
+
+            }
+
+        }
+
+
+        /* LOGIN */
+
+        function login() {
+
+            const username =
+                document
+                .getElementById("loginUsername")
+                .value.trim();
+
+            const password =
+                document
+                .getElementById("loginPassword")
+                .value;
+
+
+            /*
+                DEMO LOGIN
+
+                Username: Divy
+                Password: Divy01
+            */
+
+            if (
+                username === "Divy" &&
+                password === "Divy01"
+            ) {
+
+                showMessage(
+                    "Login successful! Welcome back.",
+                    "success"
+                );
+
+
+                localStorage.setItem(
+                    "loggedIn",
+                    "true"
+                );
+
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        "home.html";
+
+                }, 800);
+
+            }
+
+            else {
+
+                showMessage(
+                    "Invalid username or password.",
+                    "error"
+                );
+
+            }
+
+        }
+
+
+        /* SIGN UP */
+
+        function signup() {
+
+            const name =
+                document
+                .getElementById("signupName")
+                .value.trim();
+
+            const username =
+                document
+                .getElementById("signupUsername")
+                .value.trim();
+
+            const email =
+                document
+                .getElementById("signupEmail")
+                .value.trim();
+
+            const password =
+                document
+                .getElementById("signupPassword")
+                .value;
+
+
+            if (
+                name === "" ||
+                username === "" ||
+                email === "" ||
+                password === ""
+            ) {
+
+                showMessage(
+                    "Please fill in all fields.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            /*
+                DEMO SIGN UP
+
+                For a real website,
+                save this information
+                in a database.
+            */
+
+            localStorage.setItem(
+                "username",
+                username
+            );
+
+            localStorage.setItem(
+                "email",
+                email
+            );
+
+
+            showMessage(
+                "Account created successfully!",
+                "success"
+            );
+
+
+            setTimeout(function() {
+
+                showLogin();
+
+                document
+                    .getElementById("loginUsername")
+                    .value = username;
+
+            }, 1000);
+
+        }
+
+
+        /* FORGOT PASSWORD */
+
+        function openForgot() {
+
+            document
+                .getElementById("forgotPopup")
+                .style.display = "flex";
+
+        }
+
+
+        function closeForgot() {
+
+            document
+                .getElementById("forgotPopup")
+                .style.display = "none";
+
+        }
+
+
+        function resetPassword() {
+
+            const email =
+                document
+                .getElementById("forgotEmail")
+                .value.trim();
+
+
+            if (email === "") {
+
+                alert(
+                    "Please enter your email address."
+                );
+
+                return;
+
+            }
+
+
+            alert(
+                "Password reset link has been sent!"
+            );
+
+
+            closeForgot();
+
+        }
+
+
+        /* MESSAGE */
+
+        function showMessage(text, type) {
+
+            const message =
+                document.getElementById("message");
+
+            message.textContent = text;
+
+            message.className = type;
+
+        }
+
+
+        function clearMessage() {
+
+            const message =
+                document.getElementById("message");
+
+            message.textContent = "";
+
+            message.className = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
