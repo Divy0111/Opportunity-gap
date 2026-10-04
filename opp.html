@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportune - Student Opportunities</title>
+    <link rel="stylesheet" href="opp.css">
+    <!-- <link rel="stylesheet" href="search.css"> -->
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Opportune
+        </div>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#opportunities">Opportunities</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button class="login-btn" onclick="openlogin()">Login</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+
+        <button class="menu-btn" id="menuBtn"> ☰ </button>
+
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-heading"> 🚀 BUILD YOUR FUTURE </p>
+
+            <h1>
+                Discover Opportunities.
+                <span>Grow Your Career.</span>
+            </h1>
+
+            <p class="hero-text">
+                Find internships, scholarships, hackathons,
+                competitions and other opportunities designed
+                for students.
+            </p>
+        
+            
+            <!-- SEARCH -->
+
+            
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search internships, hackathons, scholarships..."
+                >
+                <button id="searchBtn"> Search </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories" id="categories">
+
+        <div class="section-title">
+            <p>EXPLORE</p>
+            <h2> Find Opportunities </h2>
+        </div>
+
+        <div class="category-container">
+
+            <div class="category-card" data-category="Internship">
+                <div class="category-icon">💼</div>
+                <h3>Internships</h3>
+                <p>Gain real-world experience</p>
+            </div>
+
+            <div class="category-card" data-category="Scholarship">
+                <div class="category-icon">🎓</div>
+                <h3>Scholarships</h3>
+                <p>Find financial support</p>
+            </div>
+
+            <div class="category-card" data-category="Hackathon">
+                <div class="category-icon">💻</div>
+                <h3>Hackathons</h3>
+                <p>Build and compete</p>
+            </div>
+
+            <div class="category-card" data-category="Competition">
+                <div class="category-icon">🏆</div>
+                <h3>Competitions</h3>
+                <p>Show your skills</p>
+            </div>
+
+            <div class="category-card" data-category="Course">
+                <div class="category-icon">📚</div>
+                <h3>Courses</h3>
+                <p>Learn new skills</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= OPPORTUNITIES ================= -->
+
+    <section class="opportunities" id="opportunities">
+
+        <div class="section-heading">
+
+            <div>
+                <p>LATEST</p>
+                <h2> Latest Opportunities </h2>
+            </div>
+
+            <select id="categoryFilter">
+                <option value="All"> All Opportunities </option>
+                <option value="Internship"> Internships </option>
+                <option value="Scholarship"> Scholarships </option>
+                <option value="Hackathon"> Hackathons </option>
+                <option value="Competition"> Competitions </option>
+                <option value="Course"> Courses </option>
+            </select>
+        </div>
+
+        <!-- OPPORTUNITY CARDS -->
+
+        <div class="opportunity-container" id="opportunityContainer">
+
+            <!-- CARD 1 -->
+
+            <div class="opportunity-card"
+                 data-category="Internship"
+                 data-title="Software Development Internship">
+
+                <div class="card-top">
+
+                    <span class="tag internship">
+                        Internship
+                    </span>
+
+                    <button class="save-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Software Development Internship
+                </h3>
+
+                <p class="company">
+                    Tech Company
+                </p>
+
+                <p>
+                    💻 Work on real-world software projects
+                    and gain professional experience.
+                </p>
+
+                <div class="card-info">
+
+                    <span>
+                        📍 Remote
+                    </span>
+
+                    <span>
+                        ⏰ 30 Days
+                    </span>
+
+                </div>
+
+                <div class="deadline">
+                    Deadline: 15 Oct 2026
+                </div>
+
+                <button class="apply-btn">
+                    View Opportunity
+                </button>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="opportunity-card"
+                 data-category="Scholarship"
+                 data-title="National Student Scholarship">
+
+                <div class="card-top">
+
+                    <span class="tag scholarship">
+                        Scholarship
+                    </span>
+
+                    <button class="save-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    National Student Scholarship
+                </h3>
+
+                <p class="company">
+                    Education Foundation
+                </p>
+
+                <p>
+                    💰 Financial assistance for deserving
+                    college students.
+                </p>
+
+                <div class="card-info">
+
+                    <span>
+                        🎓 Students
+                    </span>
+
+                    <span>
+                        💰 ₹50,000
+                    </span>
+
+                </div>
+
+                <div class="deadline">
+                    Deadline: 20 Oct 2026
+                </div>
+
+                <button class="apply-btn">
+                    View Opportunity
+                </button>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="opportunity-card"
+                 data-category="Hackathon"
+                 data-title="National Innovation Hackathon">
+
+                <div class="card-top">
+
+                    <span class="tag hackathon">
+                        Hackathon
+                    </span>
+
+                    <button class="save-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    National Innovation Hackathon
+                </h3>
+
+                <p class="company">
+                    Innovation Club
+                </p>
+
+                <p>
+                    🚀 Build innovative solutions to
+                    real-world problems.
+                </p>
+
+                <div class="card-info">
+
+                    <span>
+                        👥 Team
+                    </span>
+
+                    <span>
+                        🏆 ₹1,00,000
+                    </span>
+
+                </div>
+
+                <div class="deadline">
+                    Deadline: 25 Oct 2026
+                </div>
+
+                <button class="apply-btn">
+                    View Opportunity
+                </button>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+
+            <div class="opportunity-card"
+                 data-category="Competition"
+                 data-title="National Coding Competition">
+
+                <div class="card-top">
+
+                    <span class="tag competition">
+                        Competition
+                    </span>
+
+                    <button class="save-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    National Coding Competition
+                </h3>
+
+                <p class="company">
+                    Coding Community
+                </p>
+
+                <p>
+                    🧠 Test your programming and
+                    problem-solving skills.
+                </p>
+
+                <div class="card-info">
+
+                    <span>
+                        💻 Online
+                    </span>
+
+                    <span>
+                        🏆 Prizes
+                    </span>
+
+                </div>
+
+                <div class="deadline">
+                    Deadline: 30 Oct 2026
+                </div>
+
+                <button class="apply-btn">
+                    View Opportunity
+                </button>
+
+            </div>
+
+
+            <!-- CARD 5 -->
+
+            <div class="opportunity-card"
+                 data-category="Courses"
+                 data-title="Java Backend Development">
+
+                <div class="card-top">
+
+                    <span class="tag courses">
+                        Courses
+                    </span>
+
+                    <button class="save-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Java Backend Development
+                </h3>
+
+                <p class="company">
+                    Development Courses
+                </p>
+
+                <p>
+                    💻 Learn Backend with Java and Work on real-world software projects.
+                </p>
+
+                <div class="card-info">
+
+                    <span>
+                        📍 Online
+                    </span>
+
+                    <span>
+                        ⏰ 30 Days
+                    </span>
+
+                </div>
+
+                <div class="deadline">
+                    Deadline: 15 Oct 2026
+                </div>
+
+                <button class="apply-btn">
+                    View Opportunity
+                </button>
+
+            </div>
+
+
+
+        </div>
+
+
+        <p id="noResults">
+            No opportunities found.
+        </p>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>
+            Don't Miss Your Next Opportunity 🚀
+        </h2>
+
+        <p>
+            Discover opportunities and take the next
+            step towards your career.
+        </p>
+
+        <button class="signup-btn">
+            Get Started
+        </button>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="about">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h2>
+                    Opportune
+                </h2>
+
+                <p>
+                    Connecting students with opportunities
+                    that help them learn, grow and succeed.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="#">
+                    Internships
+                </a>
+
+                <a href="#">
+                    Scholarships
+                </a>
+
+                <a href="#">
+                    Hackathons
+                </a>
+
+                <a href="#">
+                    Competitions
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Company
+                </h3>
+
+                <a href="#">
+                    About Us
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Opportune. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <script src="opp.js"></script>
+
+</body>
+
+</html>
